@@ -1,25 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
+import Orders from 'pages/seller/Orders';
+import UserList  from 'pages/admin/UserList';
+import Products from 'pages/admin/Products';
+
+import AuthLayout from 'layouts/AuthLayout';
+import AdminLayout from 'layouts/AdminLayout';
+import SellerLayout from 'layouts/SellerLayout';
+import index from 'pages/admin';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Router>
+      <Switch>
+
+      <Route path='/login'>
+        <AuthLayout/>
+
+      </Route>
+      <Route path={['/admin','/admin/productos','/admin/ventas','/admin/usuarios']}>
+       <AdminLayout>
+        <Switch>
+          <Route path= '/admin/productos'>
+          <Products/>
+          </Route>
+          <Route path= '/admin/ventas'>
+          <Orders/>
+          </Route>
+          <Route path= '/admin/usuarios'>
+          <UserList/>
+          </Route>
+          <Route path= '/admin'>
+           <index/>
+          </Route>
+        </Switch>
+      </AdminLayout>
+      </Route>
+
+
+     <Route path= {['/vendedor','vendedor/ventas']}>
+       <SellerLayout>
+         <Switch>
+          <Route path= '/vendedor/ventas'>
+          <Orders/>
+          </Route>
+          <Route path= '/vendedor'>
+          
+          </Route>
+         </Switch>
+       </SellerLayout>
+     </Route>
+     
+      </Switch>
+    </Router>
+    
+
   );
 }
 
 export default App;
+
+
+ 
