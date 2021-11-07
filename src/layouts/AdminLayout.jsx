@@ -1,23 +1,19 @@
-import React from 'react'
-import Footer from 'components/Footer';
-import 'styles/admin-layout-style.css';
+import React from 'react';
+import 'styles/layouts-style.css';
 import Sidebar from 'components/Sidebar';
-import Header from 'components/Header';
+import PrivateLayout from 'layouts/PrivateLayout';
 
-const AdminLayout = ({children}) => {
+const AdminLayout = ({ children }) => {
+
     return (
-        <div className="adminLayoutContainer">
-            
-            <Sidebar/>
-            <main className="mainPage">
-                <Header/> 
-                {children}
-                
-            
+        <PrivateLayout>
+            <div className="adminLayoutContainer">
+                <Sidebar />
+                <main className="mainPage">
+                    {children}
                 </main>
-                
-        </div>
+            </div>
+        </PrivateLayout>
     )
-}
-
+};
 export default AdminLayout;

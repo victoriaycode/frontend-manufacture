@@ -1,0 +1,926 @@
+
+
+:root{
+  --colortitle:#1960c9;
+  --colorbackground1:whitesmoke;
+  --btn_color:#0d6efd;
+  --black:#363b41;
+  --hover_blue: #3880ec;
+}
+
+.tabscontainer{
+  margin-left: 20px;
+}
+/*main page container style*/
+.MainSection{
+margin-top: 20px;
+ 
+ margin-left: 10px;
+ display:grid;
+ justify-items: center;
+ justify-content: center;
+ 
+ }
+ .notifMessage{
+  margin-top: 60px;
+  margin-left: 10px;
+  display:grid;
+  justify-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color:var(--btn_color);
+ }
+ .greeting{
+  margin-top: 20px;
+  display:grid;
+  justify-items: center;
+  justify-content: left;
+ }
+
+/*title page div style*/
+.titlepage{
+  align-items: center;
+  margin-left: 10px;
+  display: grid;
+  margin-right: 20px;
+  
+}
+
+.title
+{margin-top: 10px;
+  margin-left: 10px;
+  padding-left: 20px;
+  color: var(--colortitle);
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+.addNewSubt{
+  font-size: 20px;
+  margin-top: 10px;
+  color:var(--colortitle)
+}
+.dateInfo{
+  margin-top:20px;
+  margin-left: 50px;
+  font-style: italic ;
+  font-size: 20px;
+}
+
+.subt1{
+  font-size:20px;
+  
+  margin-top:20px;
+  margin-left: 40px;
+  color: var(--colortitle);
+  margin-bottom: 1px;
+}
+
+.marg-l{
+  margin-left: 30px;
+  margin-right: 48px;
+}
+/*icons*/
+.btnIcon{
+  height: 20px;
+  margin-right: 2px;
+}
+
+i {
+  padding:2px;
+}
+/*buttons */
+.btnGeneral {
+  
+  border: 0px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: 400;
+  
+}
+.btnGeneral:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+.btnListaVentas{
+  background-color:var(--btn_color);
+  color: white;
+  font-size: 20px;
+  box-shadow: 1px 1px 1px 1px rgb(64, 68, 71);
+  margin-right: 20px;
+  border-radius: 6px;
+}
+
+.btnCreateUser,.btnCreateProduct{
+  font-size: 14px;
+  background-color: var(--btn_color);
+  margin-left: 500px;
+  margin-right: 20px;
+  
+  color:white;
+}
+
+.btnCreateProduct:hover{
+  background:var(--hover_blue);
+}
+.btnCreateProduct{
+  margin-bottom: 10px;
+}
+btnCreateUser,.btnCreateProduct:hover{
+  background:var(--hover_blue);
+}
+.btnCancel{
+  font-size: 14px;
+  background-color: lightgrey;
+  
+}
+
+
+.btnSearchUser{
+  margin-right: 5px;
+  color:white;
+  background-color: var(--btn_color);
+  margin-right: 10px;
+}
+.btnEdit:hover{
+  background:var(--hover_blue);
+}
+.btnEdit{
+  font-size:small;
+  height: 30px;
+  margin-right: 5px;
+  color:white;
+  background-color: var(--btn_color);
+  margin-right: 10px;
+}
+.btnDelete{
+  height: 30px;
+  font-size:small;
+  margin-right: 5px;
+  background-color:lightgrey;
+}
+.btnBack{
+  height: 30px;
+  font-size:small;
+  margin-top: 10px;
+  margin-right: 20px;
+  height: 40px;
+  background-color:lightgrey;
+  padding:5px;
+  
+}
+
+/*big btn*/
+.btnBig{
+  
+  border: 0px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-weight: bolder;
+  font-size: 20px;
+  margin-right:30px;
+  
+
+}
+.btnBig:hover{
+  background-color:var(--btn_color);
+  cursor: pointer;
+  
+}
+.btnAddOrder{
+  color:white;
+  background-color:var(--colortitle);
+  
+}
+.btnAddOrder:hover{
+  background:var(--hover_blue);
+}
+.btnCancelOrder{
+  background-color:lightgray;
+  font-weight: 500;
+}
+
+
+
+/*selects */
+.selectRole, .selectStatus{
+  margin-top:5px;
+  
+  font-size: 16px;
+  padding: 4px;
+  width: 150px;
+ height: 35px;
+  margin-left:0px;
+  margin-bottom: 5px;
+  outline: none;
+}
+
+/*
+.selectStatus {
+  font-size: 16px;
+  background-color: white;
+  padding: 4px;
+  width: 160px;
+  margin-top:3px;
+  margin-bottom: 5px;
+  
+ 
+}
+*/
+
+.aproved{
+  color:green;
+}
+.denied{
+  color:red;
+}
+
+.pending{
+  color:orange;
+}
+
+
+
+
+/*styles for search sections*/
+
+.searchContainer{
+  display:  flex;
+  height: 70px;
+  justify-content: space-between;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  margin: 10px 50px 20px 30px;
+ /* border: 2px solid;
+  border-color: lightslategray;
+  background-color: var(--colorbackground1);
+  */
+}
+
+/*Styles for html elements in the section of adding new  information*/
+.addContainer{
+  background-color:var(--colorbackground1);
+  display: flex;
+  margin: 5px 50px 20px 30px;
+  padding: 10px 2px 0px 0px;
+  border-radius: 6px;
+  border: 1px solid;
+  border-color: gray;
+  align-self: left;
+}
+
+/* ul  userlist section*/
+.listFields{ 
+  display: grid;
+  list-style: none;
+  justify-content: space-between;  
+ 
+}
+
+.listFields >li{
+
+  border-radius: 4px;
+  margin-left: 20px;
+  margin-top: 0px;
+  border:white ;
+}
+
+
+.listFields label{
+  margin-top:20px;
+  padding-inline: 2px;
+  color: black;
+  color:var(--colortitle)
+  
+}
+.addDataRoleContainer > select{
+  margin-left: 10px;
+}
+
+/*ul de product section*/
+.ulProduct{
+  list-style: none;
+  align-items: center;
+  
+}
+.ulProduct li{
+  padding-right: 30px;
+  text-align: bottom;
+  margin: 5px;
+  color:var(--colortitle)
+ 
+}
+.ulProduct label{
+ margin-right: 20px;
+ 
+}
+
+
+
+
+
+/*Table styles*/
+.listSectionContainer{
+
+align-items: center;
+overflow-x: hidden;
+overflow-y: scroll;
+margin-left: 30px;
+margin-right: 50px;
+position: relative;
+
+border:0.5px solid gray;
+
+
+height: 100%;
+}
+
+/*size for table in list products in new order section*/
+.divProductToAdd{
+  padding: 5px;
+  
+ border:none;
+  overflow-y: hidden;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+/*size for orders list*/
+.divOrders{
+  height: 520px;
+}
+
+/*size for products list*/
+.divProducts{
+  height: 510px;
+  overflow-x: scroll;
+  
+}
+
+
+/**size for user table*/
+.divUsuariosList{
+  margin-top:20px;
+  height:540px;
+}
+
+
+.ListTable{
+  background-color: white;
+  text-align: left; 
+  width: 100%;
+  
+  
+}
+.thead{
+  background-color: whitesmoke;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  color:var(--colortitle);
+  
+  border-bottom:2px solid;
+  border-color: var(--colortitle);
+  
+}
+
+.col_title{
+  padding: 5px;
+  padding-inline: 10px;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  font-size: 15px;
+  
+}
+
+.col-last{
+ padding-left: 20px;
+ color:var(--colortitle);
+  font-size: small;
+  
+}
+.datarow{
+  height:100%;
+  width: 100%;
+  
+}
+.datarow td{
+  padding:6px;
+  border-bottom:1px solid;
+  border-color: gray;
+  
+}
+.pad-b{
+  padding-bottom: 5px;
+}
+.numberTD{
+  width: 80px;
+}
+.smallTD{
+  width: 120px;
+}
+.mediumTD{
+  width: 300px;
+  
+}
+
+.smallLargeTD{
+  width: 200px;
+  
+}
+.smallLargeTDname{
+  width: 200px;
+  
+  padding-left:5px;
+}
+.descripTD{
+  width: 620px;
+}
+
+.xlargeTD{
+  width: 800px;
+}
+
+
+.totaltext{
+  font-size: 25px;
+  font-weight: 400;
+  margin-right: 100px;
+  border:1px solid;
+  border-color: lightsteelblue;
+
+}
+
+/**inputs **/
+.toSearchInput{
+  background-color: var(--colorbackground1);
+  border: 1px solid gray;
+  padding: 4px;
+  border-radius: 8px;
+ 
+  height: 40px;
+  margin-top:8px;
+ margin-left: 10px;
+ margin-right: 10px;
+  outline: none;
+   overflow:scroll;
+}
+
+/*general input*/
+.inputChange{
+  
+  background-color: white;
+  border: 1px solid gray;
+  
+  padding: 4px;
+  border-radius: 6px;
+  
+  height: 35px;
+  margin-top:8px;
+
+  outline: none;
+  
+  
+}
+.inputNumber{
+ 
+ margin-right: 10px;
+ width: 80px;
+}
+.inputMedium{
+  width: 600px;
+ 
+  
+}
+.inputMedium text{
+  overflow-wrap: break-word;
+}
+.inputValue{
+  width: 100px;
+}
+.inputLarge{
+  width: 670px;
+
+} 
+
+
+.inputTotal{
+  font-size:30px;
+  background-color: lightgray;
+  height: 40px;
+  width: 200px;
+
+}
+/*other styles for specific section*/
+
+/**Sección para estilos de modulo ventas**/
+.newOrderContainer{
+  display: flex;
+  background-color: var(--colorbackground1);
+  border:1px solid;
+  border-color: lightslategray;
+  border-radius: 5px;
+  padding-top: 7px;
+  margin-left: 30px;
+  margin-right: 50px;
+  
+  
+}
+
+/*div containers de btn*/
+
+.btnDivRegistBtn{
+  margin-left: 430px;
+  margin-bottom: 15px;
+}
+/*in userlist section */
+.btnOptionsContainer {
+  display:flex;
+  padding:20px;
+}
+
+/*in list order section*/
+.divBtnChangePage{
+  margin-bottom: 20px;
+  margin-left: 1000px;
+}
+.divBtnEditRow button{
+  margin-left: 20px;
+}
+/*in add order section*/
+.divBtnTotalOrder{
+ 
+align-items: right;
+margin-left: 200px;
+padding-inline: 10px;
+}
+.divClientOpt{
+
+align-items: center;
+justify-self: center;
+margin-right: 5px;
+padding-inline: 2px;
+}
+.divClientOpt button{
+  margin-left: 10px;
+}
+
+/**adding update section for products module*/
+
+.withupdatesection{
+  margin: 20px 45px 0px 30px;
+}
+.updateSection{
+  height: 100px;
+  background-color: var(--colorbackground1);
+  justify-content: space-between;
+  
+  margin: 0px 45px 20px 30px;
+  border: 2px solid;
+  border-color: lightslategray;
+}
+.updateProductUl{
+  list-style: none;
+  display: flex;
+ 
+}
+  .updateProductUl li{
+    display: grid;
+    margin: 10px;
+  }
+  .btnFlex{
+    display:flex;
+  }
+ 
+  .dialogDelete{
+    justify-items: center;
+    
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 8px;
+    
+  }
+
+  .editBtnContainer {
+    width: 120px;
+    align-items: center;
+    padding-left: 15px;
+    
+  }
+  
+  .editBtnContainer2 {
+    display: flex;
+    align-items: center;
+    margin-left: 150px;
+
+  }
+  
+  .editBtnContainer2 button {
+    display: flex;
+  
+    font-size: 20px;
+    height: 40px;
+    width: 45px;
+  }
+
+  .dialogUpdate{
+   
+    justify-items: center;
+    display: grid;
+    padding: 20px;
+    height: 300px;
+    width: 500px;
+    font-size: 16px;
+  }
+  .infoToUpdateDiv{
+  
+  display: grid;
+  justify-items: center;
+  width: 300px;
+  
+  }
+  .pLarge{
+    width: 400px;
+    overflow-wrap: break-word;
+  }
+  .pRowLarge{
+    width: 500px;
+    overflow-wrap: break-word;
+  }
+
+  input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+/**Styles for additional components in users module*/
+.searchContainerUser{
+  
+  margin-left: 30px;
+  align-self: center;
+  height: 50px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: fit-content;
+  padding:7px;
+}
+
+/**In module orders*/
+
+.dialogViewOrder{
+padding: 20px;
+height: 100%;
+width: 100%;
+
+overflow-x: hidden;
+overflow-y: hidden;
+}
+.headerDialogView{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid var(--btn_color);
+  border-top-left-radius: .3rem;
+  border-top-right-radius: .3rem;
+  color:var(--btn_color);
+  
+}
+.updateDialog{
+
+}
+.spanClose{
+cursor: pointer;
+}
+.spanClose{
+ 
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+
+}
+.editBtnContainer3 {
+  width: 120px;
+  display: flex;
+  align-items: center;
+
+}
+.infoOrderheader{
+  display:grid;
+  margin-bottom: 5px;
+  padding: 10px;
+}
+.tableDialogView{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 250px;
+  
+  overflow-x: hidden;
+  overflow-y: scroll;
+ 
+  text-align: center; 
+}
+.editBtnOK{
+  margin-left: 200px;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.BtnOK{
+  font-size: 20px;
+  height: 40px;
+  width: 45px;
+  
+    
+  align-items: center;
+}
+.viewRow{
+  font-size:small;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  margin: 5px;
+ 
+}
+.viewRow td{
+  padding: 5px;
+}
+.divtotalOrder{
+  text-align: center;
+  align-items: center;
+  
+}
+
+.orderSplit{
+  display: grid;
+  grid-template-columns: 0.2fr 1fr;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 100%;
+  overflow-x: hidden;
+  
+}
+.sectionOrder{
+  width: 360px;
+  padding:15px;
+  margin-left: 10px;
+
+  box-shadow: rgba(44, 44, 78, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  
+}
+.formNewOrder input{
+  display: inline-flex;
+  width: 200px;
+}
+
+.newOrderCont{
+  margin-top: 20px;
+}
+
+.labelsOrders{
+  display: grid;
+  padding: 4px;
+  
+}
+.labelsOrders label{
+  display: grid;
+  padding: 4px;
+  height: 35px;
+  margin-top: 10px;
+  width: 120px;
+}
+.inputsOrders{
+  padding-top: 10px;
+  display: grid;
+  padding-inline: 10px;
+}
+
+
+.newOrderCont{
+  display: flex;
+  grid-template-rows: repeat(2, 1fr);
+}
+.btnOrdersDiv{
+  margin-top: 30px;
+  
+}
+.productsToCart{
+  display: grid;
+  margin-top:20px;
+  margin-left: 10px;
+  width: 100%;
+ 
+  
+}
+.productsOptions{
+  margin-top:15px;
+}
+.viewRowMedium{
+  font-size:medium;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  margin: 5px;
+  
+}
+.viewRowMedium td{
+  padding: 5px;
+}
+.divCartOpt{
+  margin-left: 10px;
+  display:grid;
+}
+.divClient{
+  margin:5px;
+  padding: 10px;
+  display: flex;
+  
+}
+.divClient label{
+  font-size: 16px;
+  margin-top: 15px;
+}
+.closeNewClient{
+  margin-top: 20px;
+  align-content: center;
+}
+.divCenter{
+  box-shadow: rgba(44, 44, 78, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  display: grid;
+  justify-items: center;
+  justify-self: center;
+}
+
+.spanCloseClient{
+  margin-left: 100px;
+}
+.btn2div{
+  margin-top: 35px;
+  margin-left: 10px;
+}
+.textfSeller{
+ 
+  margin-top:20px;
+  width: 250px;
+}
+.divCartTable{
+  height: 315px;
+  
+}
+.tableorderinfo{
+  width: 100%;
+  margin:10px 10px 10px 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.infoFin{
+  padding:10px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  display: flex;
+  margin-bottom: 5px;
+}
+.infoFin label{
+  margin-top:10px;
+  font-size: 18px;
+  color:var(--colortitle)
+}
+.infoFin input{
+  margin-left: 10px;
+  
+}
+.dataProductToAdd{
+  display:flex;
+  
+}
+.mg-top{
+  margin-top: 50px;
+  font-size: 20px;
+  height: 40px;
+  
+}
+.labeldescr{
+  border: 1px solid black;
+  background-color: black;
+ }
+ 
+ .btnMedium{
+   margin-top:10px;
+  font-size:medium;
+ 
+  height: 50px;
+  margin-right: 5px;
+  color:white;
+  background-color: var(--btn_color);
+  margin-right: 10px;
+ }
+ .changeOpt{
+   padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+ }
+ .btnOpt{
+   margin:5px;
+   color:whitesmoke;
+   background-color: var(--black);
+ }

@@ -1,13 +1,11 @@
 import React from 'react'
-import Header from 'components/Header';
-import Footer from 'components/Footer';
+import Sidebar from 'components/Sidebar';
 
-export default function SellerLayout({children}) {
+export default function SellerLayout({ children }) {
     return (
-        <div>
-        <Header/>
-        <main>{children}</main>
-        <Footer/>
-    </div>
+        <div className="sellerLayoutContainer">
+            <Sidebar />
+            <main>{children}</main>
+        </div>
     )
 }
