@@ -29,17 +29,14 @@
     "react-spinners": "^0.11.0",
     "react-toastify": "^8.0.3",
     "reactstrap": "^8.10.0",
-    "web-vitals": "^1.1.2"
-    
+    "web-vitals": "^1.1.2",
+    "yarn": "^1.22.17"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  }, 
-  "engines": {
-    "node": "14.x"
   },
   "eslintConfig": {
     "extends": [
