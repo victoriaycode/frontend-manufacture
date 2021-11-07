@@ -22,7 +22,7 @@ function App() {
     <Auth0Provider
       domain='parse-manofacturer.us.auth0.com'
       clientId='tHoSOnRwFju4K39I7TqS5eIoARoYgZmV'
-      redirectUri="https://webparsefe.herokuapp.com/admin"
+      redirectUri="https://enigmatic-shore-85040.herokuapp.com/admin"
       audience='api-autentication-parse-manofacturer'
     >
       <div>
