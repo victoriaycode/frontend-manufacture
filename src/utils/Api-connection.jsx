@@ -7,7 +7,7 @@ const getToken = () => {
 export const createProduct = async (data, successCallback, errorCallback) => {
   const options = {
     method: 'POST',
-    url: 'https://weparsebk.herokuapp.com/products/',
+    url: 'http://localhost:3001/products/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -20,7 +20,7 @@ export const createProduct = async (data, successCallback, errorCallback) => {
 export const obtainProducts = async (successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: 'https://weparsebk.herokuapp.com/products/',
+    url: 'http://localhost:3001/products/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -29,10 +29,12 @@ export const obtainProducts = async (successCallback, errorCallback) => {
   await axios.request(options).then(successCallback).catch(errorCallback);
 };
 
+
+
 export const obtainProductById = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `https://weparsebk.herokuapp.com/products/${id}/`,
+    url: `http://localhost:3001/products/${id}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -44,7 +46,7 @@ export const obtainProductById = async (id, successCallback, errorCallback) => {
 export const obtainProductByDescrip = async (descrip, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `https://weparsebk.herokuapp.com/products/d/${descrip}/`,
+    url: `http://localhost:3001/products/d/${descrip}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -57,7 +59,7 @@ export const obtainProductByDescrip = async (descrip, successCallback, errorCall
 export const obtainProductByState = async (state, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `https://weparsebk.herokuapp.com/products/s/${state}/`,
+    url: `http://localhost:3001/products/s/${state}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -71,7 +73,7 @@ export const obtainProductByState = async (state, successCallback, errorCallback
 export const updateProductInfo = async (id, dataToUpdate, successCallback, errorCallback) => {
   var options = {
     method: 'PATCH',
-    url: `https://weparsebk.herokuapp.com/products/upd/${id}/`,
+    url: `http://localhost:3001/products/upd/${id}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -86,7 +88,7 @@ export const updateProductInfo = async (id, dataToUpdate, successCallback, error
 export const deleteProduct = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'DELETE',
-    url: `https://weparsebk.herokuapp.com/products/${id}`,
+    url: `http://localhost:3001/products/${id}`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -98,7 +100,7 @@ export const deleteProduct = async (id, successCallback, errorCallback) => {
 export const createUser = async (data, successCallback, errorCallback) => {
   var options = {
     method: 'POST',
-    url: 'https://weparsebk.herokuapp.com/users/',
+    url: 'http://localhost:3001/users/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -111,7 +113,7 @@ export const createUser = async (data, successCallback, errorCallback) => {
 export const optainUsers = async (successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: 'https://weparsebk.herokuapp.com/users/',
+    url: 'http://localhost:3001/users/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -123,7 +125,7 @@ export const optainUsers = async (successCallback, errorCallback) => {
 export const updateUser = async (id, dataToUpdate, successCallback, errorCallback) => {
   var options = {
     method: 'PATCH',
-    url: `https://weparsebk.herokuapp.com/users/upd/${id}/`,
+    url: `http://localhost:3001/users/upd/${id}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -137,7 +139,7 @@ export const updateUser = async (id, dataToUpdate, successCallback, errorCallbac
 export const obtainUserById = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `https://weparsebk.herokuapp.com/users/${id}/`,
+    url: `http://localhost:3001/users/${id}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -148,7 +150,7 @@ export const obtainUserById = async (id, successCallback, errorCallback) => {
 export const obtainUserByRole = async (role, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `https://weparsebk.herokuapp.com/users/r/${role}/`,
+    url: `http://localhost:3001/users/r/${role}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -160,7 +162,7 @@ export const obtainUserByRole = async (role, successCallback, errorCallback) => 
 export const obtainUserByEmail = async (email, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `https://weparsebk.herokuapp.com/users/e/${email}/`,
+    url: `http://localhost:3001/users/e/${email}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -172,7 +174,7 @@ export const obtainUserByEmail = async (email, successCallback, errorCallback) =
 export const deleteUser = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'DELETE',
-    url: `https://weparsebk.herokuapp.com/users/${id}`,
+    url: `http://localhost:3001/users/${id}`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -187,7 +189,7 @@ export const deleteUser = async (id, successCallback, errorCallback) => {
 export const obtainOrders = async (successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: 'https://weparsebk.herokuapp.com/orders/',
+    url: 'http://localhost:3001/orders/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -199,7 +201,7 @@ export const obtainOrders = async (successCallback, errorCallback) => {
 export const obtainOrderById = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `https://weparsebk.herokuapp.com/orders/${id}/`,
+    url: `http://localhost:3001/orders/${id}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -211,7 +213,7 @@ export const obtainOrderById = async (id, successCallback, errorCallback) => {
 export const obtainOrderByClientId = async (idclient, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `https://weparsebk.herokuapp.com/orders/idclient/${idclient}/`,
+    url: `http://localhost:3001/orders/idclient/${idclient}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -224,7 +226,7 @@ export const obtainOrderByClientId = async (idclient, successCallback, errorCall
 export const obtainOrderByClientName = async (clientname, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `https://weparsebk.herokuapp.com/orders/clientname/${clientname}/`,
+    url: `http://localhost:3001/orders/clientname/${clientname}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -238,7 +240,7 @@ export const obtainOrderByClientName = async (clientname, successCallback, error
 export const deleteOrder = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'DELETE',
-    url: `https://weparsebk.herokuapp.com/orders/${id}`,
+    url: `http://localhost:3001/orders/${id}`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -250,7 +252,7 @@ export const deleteOrder = async (id, successCallback, errorCallback) => {
 export const obtainClients = async (successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: 'https://weparsebk.herokuapp.com/clients/',
+    url: 'http://localhost:3001/clients/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -262,7 +264,7 @@ export const obtainClients = async (successCallback, errorCallback) => {
 export const createClient = async (data, successCallback, errorCallback) => {
   var options = {
     method: 'POST',
-    url: 'https://weparsebk.herokuapp.com/clients/',
+    url: 'http://localhost:3001/clients/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -274,7 +276,7 @@ export const createClient = async (data, successCallback, errorCallback) => {
 export const createOrder = async (data, successCallback, errorCallback) => {
   var options = {
     method: 'POST',
-    url: 'https://weparsebk.herokuapp.com/orders/',
+    url: 'http://localhost:3001/orders/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -286,7 +288,7 @@ export const createOrder = async (data, successCallback, errorCallback) => {
 export const updateOrder = async (idOrder, dataToUpdate, successCallback, errorCallback) => {
   var options = {
     method: 'PUT',
-    url: `https://weparsebk.herokuapp.com/orders/upd/${idOrder}/`,
+    url: `http://localhost:3001/orders/upd/${idOrder}/`,
     headers: {
        'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -301,7 +303,7 @@ export const updateOrder = async (idOrder, dataToUpdate, successCallback, errorC
 export const obtainUserData = async (successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: 'https://weparsebk.herokuapp.com/users/auth/self/',
+    url: 'http://localhost:3001/users/auth/self/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
