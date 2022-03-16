@@ -47,13 +47,9 @@ const AddOrder = () => {
   const [availableProducts, setAvailableProducts] = useState(null);
 
   useEffect(async () => {
-    console.log(
-      'Hola, soy un use effect que se ejecuta cuando usas el input, para cargar la lista de opciones :)'
-    );
+  
     await obtainClients(
       (response) => {
-        console.log('la respuesta que se recibio fue', response);
-        console.log(response.data);
         const jsonClients = response.data;
 
         const options = [];
@@ -72,17 +68,14 @@ const AddOrder = () => {
     );
     await obtainUserByRole("vendedor",
       (response) => {
-        console.log('la respuesta que se recibio fue', response);
-        console.log(response.data);
         const json = response.data;
         const options = [];
         for (var i in json) {
           var row = ( json[i].name);
           var data = { "data": row, "seller_id": json[i]._id, "seller_name": json[i].name };
           options.push(data);
-          console.log(data);
+         
         }
-        console.log("datos: ", options);
         setOptionSellers(options);
       },
       (error) => {
@@ -301,7 +294,7 @@ const AddOrder = () => {
           </div>
         </div>
       </div>
-      <div className="listSectionContainer divProductToAdd ">
+      <div className=" divProductToAdd ">
         <div>
           <h3 className="subt1">AÑADIR PRODUCTOS: </h3>
         </div>
@@ -311,7 +304,7 @@ const AddOrder = () => {
             <div className="divCartOpt"><label>Id </label>
               <input id="id_add" className="inputChange inputNumber" type="number" placeholder="" min="1" disabled></input></div>
             <div className="divCartOpt"><label>Descripcion </label>
-              <input id="descrip_add" className="inputChange mediumTD" type="text" placeholder="" min="1" disabled ></input></div>
+              <input id="descrip_add" className="inputChange smallLargeTD " type="text" placeholder="" min="1" disabled ></input></div>
             <div className="divCartOpt"><label>Cantidad </label>
               <input id="quantity_add" className="inputChange inputNumber" type="number" placeholder="1" min="1" value={productQuantityToAdd}
                 onChange={(e) => setproductQuantityToAdd(e.target.value)}></input></div>
@@ -325,7 +318,7 @@ const AddOrder = () => {
                 <img className="btnIcon" src={deleteicon} onClick={() => setReloadProducts(true)} alt="img"></img></button> </div>
           </div>
         </div>
-        /
+        
         <div className="tableDialogView divCartTable">
           <table className="tableorderinfo">
             <thead>
@@ -361,9 +354,12 @@ const AddOrder = () => {
           </table>
         </div>
         <div className="infoFin">
+          <div className="divBtnTotalOrder">
           <label className="labeltotal">Total Venta $</label>
           <input className="inputChange inputTotal " placeholder="$ Total" value={totalOrder} disabled></input>
-          <div className="divBtnTotalOrder ">
+          </div>
+         
+          <div className="divBtnTotalOrder2 ">
             <button type="submit" className="btnBig btnAddOrder" onClick={() => submitCreateOrder()}>
               <img className="btnIcon" src={checkicon} alt="img"></img> Guardar
             </button>

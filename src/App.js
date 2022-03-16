@@ -20,10 +20,10 @@ function App() {
   return (
 
     <Auth0Provider
-      domain='parse-manofacturer.us.auth0.com'
-      clientId='tHoSOnRwFju4K39I7TqS5eIoARoYgZmV'
+      domain='projectsvi.us.auth0.com'
+      clientId='naPrZmPJ9i6LpRCr3byABF1kb0VosL1j'
       redirectUri="http://localhost:3000/admin"
-      audience='api-autentication-parse-manofacturer'
+      audience='api-manufacturer-projectvi'
     >
       <div>
         <UserContext.Provider value={{ userData, setUserData }}>

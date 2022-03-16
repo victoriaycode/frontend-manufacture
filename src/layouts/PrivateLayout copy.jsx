@@ -16,7 +16,7 @@ const PrivateLayout = ({ children }) => {
     const { user, isAuthenticated, isLoading, getAccessTokenSilently,loginWithRedirect,logout } = useAuth0();
     const [loadingUserInfo, setLoadingUserInfo]= useState(false);
     const override = css`display: block;  margin: 0 auto;  border-color: red;`;
-  
+    console.log(user, isAuthenticated, isLoading);
   
     useEffect( async()  => {
         const fetchAuth0Token = async () => {
@@ -25,22 +25,22 @@ const PrivateLayout = ({ children }) => {
             const accessToken = await getAccessTokenSilently({
                 audience: 'api-manufacturer-projectvi',
             });
-            
+            //   console.log(accessToken);
             setLoadingUserInfo(true);
             localStorage.setItem("token", accessToken);
-            
+            console.log(accessToken);
 
 
             const token = accessToken;
-           
+            //console.log(token);
             const userdata = jwt_decode(token)['http://localhost/userData'];
+            console.log(userdata);
             
-            await obtainUserByEmail(userdata.email,
+            const a= await obtainUserByEmail(userdata.email,
                 (response) => {
                     
-                   
                     if (response.data != null) {
-                        
+                        console.log("Ya existe");
                        setUserData(response.data);
                        setLoadingUserInfo(false);
                     } else {

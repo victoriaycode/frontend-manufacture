@@ -46,8 +46,7 @@ const UsersTable = ({setEditOrderMode }) => {
     const [confirmDeleteDialog, setConfirmDeleteDialog] = useState(false);
 
     const submitEditUser = async () => {
-      console.log('role', editRole);
-      console.log('State', editState);
+     
       setConfirmUpdateDialog(false);
       await updateUser(
         user._id,
@@ -56,7 +55,6 @@ const UsersTable = ({setEditOrderMode }) => {
           "state": editState
         },
         (response) => {
-          console.log(response.data);
           toast.success('Usuario actualizado con éxito');
         },
         (error) => {
@@ -72,7 +70,6 @@ const UsersTable = ({setEditOrderMode }) => {
       await deleteUser(
         user._id,
         (response) => {
-          console.log(response.data);
           toast.success('usuario eliminado con éxito');
         },
         (error) => {
@@ -87,7 +84,7 @@ const UsersTable = ({setEditOrderMode }) => {
         {editable ? (
           <>
             <td className="smallLargeTDname"><label>{user.name}</label></td>
-            <td className="mediumTD"><label>{user.email}</label></td>
+            <td className="smallLargeTDname"><label>{user.email}</label></td>
 
             <td className="smallLargeTD "><select className="selectStatus" defaultValue={user.role} required onChange={(e) => setEditRole(e.target.value)}>
               <option value="" disabled>Selecciona</option>

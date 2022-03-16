@@ -327,18 +327,21 @@ align-items: center;
 overflow-x: hidden;
 overflow-y: scroll;
 margin-left: 30px;
-margin-right: 50px;
+margin-right: 30px;
+padding:5px;
 position: relative;
 
 border:0.5px solid gray;
 
-
-height: 100%;
 }
 
 /*size for table in list products in new order section*/
 .divProductToAdd{
-  padding: 5px;
+  padding: 8px;
+  font-size: small;
+  overflow-x: hidden;
+  
+  
   
  border:none;
   overflow-y: hidden;
@@ -353,13 +356,14 @@ height: 100%;
 .divProducts{
   height: 510px;
   overflow-x: scroll;
-  
+
 }
 
 
 /**size for user table*/
 .divUsuariosList{
   margin-top:20px;
+  width: fit-content;
   height:540px;
 }
 
@@ -428,12 +432,12 @@ height: 100%;
   
 }
 .smallLargeTDname{
-  width: 200px;
+  width: 150px;
   
   padding-left:5px;
 }
 .descripTD{
-  width: 620px;
+  width: 400px;
 }
 
 .xlargeTD{
@@ -483,11 +487,16 @@ height: 100%;
 }
 .inputNumber{
  
- margin-right: 10px;
- width: 80px;
+ margin-right: 2px;
+ width: 60px;
+ background-color: lightgray;
+}
+#descrip_add{
+  background-color: lightgray;
+  margin-right: 4px; 
 }
 .inputMedium{
-  width: 600px;
+  width: fit-content;
  
   
 }
@@ -504,10 +513,10 @@ height: 100%;
 
 
 .inputTotal{
-  font-size:30px;
+  font-size:28px;
   background-color: lightgray;
   height: 40px;
-  width: 200px;
+  width: 160px;
 
 }
 /*other styles for specific section*/
@@ -549,12 +558,19 @@ height: 100%;
 /*in add order section*/
 .divBtnTotalOrder{
  
-align-items: right;
-margin-left: 200px;
+align-items: center;
+
 padding-inline: 10px;
 }
+.divBtnTotalOrder2{
+ 
+  align-items: center;
+  margin-top: 8px;
+  margin-left: 8px;
+  padding-inline: 10px;
+  }
 .divClientOpt{
-
+text-align: center;
 align-items: center;
 justify-self: center;
 margin-right: 5px;
@@ -645,7 +661,7 @@ padding-inline: 2px;
     overflow-wrap: break-word;
   }
   .pRowLarge{
-    width: 500px;
+    width: 400px;
     overflow-wrap: break-word;
   }
 
@@ -757,18 +773,17 @@ cursor: pointer;
 
 .orderSplit{
   display: grid;
-  grid-template-columns: 0.2fr 1fr;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 100%;
-  overflow-x: hidden;
+  grid-template-columns: 0.2fr  1fr;
+  margin-left: 5px;
+  margin-right: 5px;
+  
   
 }
 .sectionOrder{
-  width: 360px;
-  padding:15px;
+  padding:10px;
   margin-left: 10px;
-
+  font-size: small;
+  
   box-shadow: rgba(44, 44, 78, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   
 }
@@ -796,6 +811,7 @@ cursor: pointer;
 .inputsOrders{
   padding-top: 10px;
   display: grid;
+  font-size: small;
   padding-inline: 10px;
 }
 
@@ -820,7 +836,7 @@ cursor: pointer;
   margin-top:15px;
 }
 .viewRowMedium{
-  font-size:medium;
+  font-size:small;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   margin: 5px;
   
@@ -829,7 +845,7 @@ cursor: pointer;
   padding: 5px;
 }
 .divCartOpt{
-  margin-left: 10px;
+ 
   display:grid;
 }
 .divClient{
@@ -868,22 +884,24 @@ cursor: pointer;
 .divCartTable{
   height: 315px;
   
+  
 }
 .tableorderinfo{
   width: 100%;
-  margin:10px 10px 10px 10px;
+  
   box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
 }
 
 .infoFin{
+  text-align: center;
   padding:10px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   display: flex;
   margin-bottom: 5px;
 }
 .infoFin label{
-  margin-top:10px;
   font-size: 18px;
+ text-align: center;
   color:var(--colortitle)
 }
 .infoFin input{
@@ -891,9 +909,12 @@ cursor: pointer;
   
 }
 .dataProductToAdd{
+  margin-top:4px;
   display:flex;
+
   
 }
+
 .mg-top{
   margin-top: 50px;
   font-size: 20px;
