@@ -58,7 +58,6 @@ const AddOrder = () => {
           var data = { "data": row, "client_doc_id": jsonClients[i].client_doc_id, "client_name": jsonClients[i].client_name }
           options.push(data);
         }
-        console.log("datos: ", options);
         setOptionClients(options);
 
       },
@@ -84,8 +83,6 @@ const AddOrder = () => {
     );
     await obtainProductByState("Disponible",
       (response) => {
-        console.log('la respuesta que se recibio fue', response);
-        console.log(response.data);
         const jsonProd = response.data;
         const optionsProd = [];
         for (var i in jsonProd) {
@@ -93,7 +90,6 @@ const AddOrder = () => {
           var data = { "data": row, "description": jsonProd[i].description, "unitprice": jsonProd[i].unitprice, "id": jsonProd[i].id };
           optionsProd.push(data);
         }
-        console.log("datos: ", optionsProd);
         setAvailableProducts(optionsProd);
       },
       (error) => {
@@ -119,7 +115,6 @@ const AddOrder = () => {
   }, [reloadProducts]);
   /**If different product is selected */
   useEffect(async () => {
-    console.log("producto select: ", productSelected);
     if (productSelected != null) {
       document.getElementById("id_add").value = productSelected.id;
       document.getElementById("descrip_add").value = productSelected.description;
@@ -128,7 +123,6 @@ const AddOrder = () => {
     }
   }, [productSelected]);
   useEffect(async () => {
-    console.log("producto select: ", productSelected);
     if (productSelected != null) {
       document.getElementById("unitprice_add").value = productSelected.unitprice;
       document.getElementById("total_add").value = productSelected.unitprice * productQuantityToAdd;
@@ -136,7 +130,6 @@ const AddOrder = () => {
   }, [productQuantityToAdd]);
   /**For adding products to the productsToBuy List */
   const addProductToCart = () => {
-    console.log("to add products to cart");
     if (productSelected != null) {
       let id = document.getElementById("id_add").value = productSelected.id;
       let descrip = document.getElementById("descrip_add").value = productSelected.description;
@@ -150,15 +143,12 @@ const AddOrder = () => {
       let addrow = numRow + 1;
       setNumberRow(addrow);
       setReloadProducts(true);
-      console.log("productsBuy", productsToBuy);
     } else {
       toast.error('Seleccione otra vez el producto o uno nuevo');
     }
   };
   /**For deleting products from the cart productsToBuy list */
   const deleteProductFromCart = (rowN, subtotal) => {
-    console.log("i dont buy it, no");
-    console.log("row", rowN);
     let newtotal = totalOrder - subtotal;
     setTotalOrder(newtotal)
     /**Filtering the list */
@@ -166,7 +156,6 @@ const AddOrder = () => {
       return elem.numRow !== rowN;
     });
     setProductsToBuy(list);
-    console.log("filtrado", productsToBuy);
   };
   /**Creates a order with all the data to be send to database */
   const submitCreateOrder = async () => {
@@ -183,7 +172,7 @@ const AddOrder = () => {
         "seller": sellerObj,
         "total": totalOrder
       };
-      console.log("obj", obj);
+     
       await createOrder(
         {
           "id_order": idOrder,
@@ -195,7 +184,6 @@ const AddOrder = () => {
           "total": totalOrder
         },
         (response) => {
-          console.log(response.data);
           setDialogFinish(true);
           toast.success('Orden de venta agregada con éxito');
 
@@ -217,15 +205,12 @@ const AddOrder = () => {
    */
   const saveNewClient = async () => {
     if (newClientId != "" && optionClients != null) {
-      console.log("doc", newClientId);
-      console.log("name", newClientName);
       await createClient(
         {
           client_doc_id: newClientId,
           client_name: newClientName,
         },
         (response) => {
-          console.log(response.data);
           toast.success('Cliente fue agregado exitosamente, seleccionelo en el selector');
           setIsNewClient(false);
           setReloadClients(true);

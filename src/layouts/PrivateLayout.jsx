@@ -55,7 +55,6 @@ const PrivateLayout = ({ children }) => {
                                 created_at: userdata.created_at
                             },
                             (response) => {
-                                console.log("created: ", response.data);
                                 setUserData(response.data);
                                 setLoadingUserInfo(false);
                             },

@@ -5,7 +5,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { obtainOrders, obtainOrderById, obtainOrderByClientName, deleteOrder } from 'utils/Api-connection';
 import { obtainOrderByClientId } from 'utils/Api-connection';
 import EditOrder from './EditOrder';
-import { maxHeight, maxWidth } from '@material-ui/system';
 import PrivateComponent from './PrivateComponent';
 
 const OrdersTable = ({ }) => {
@@ -18,7 +17,6 @@ const OrdersTable = ({ }) => {
       await deleteOrder(
         order._id,
         (response) => {
-          console.log(response.data);
           toast.success('Venta eliminada con éxito');
         },
         (error) => {
@@ -137,13 +135,11 @@ const OrdersTable = ({ }) => {
   const submitSearchOrderForm = async (e) => {
     e.preventDefault();
     const fd = new FormData(formSearchOrder.current);
-    console.log(fd.id);
     const searchOpt = {};
     fd.forEach((value, key) => {
       searchOpt[key] = value;
     });
     const searchby = searchOpt.searchSelect;
-    console.log("s: ", searchby);
     const info = searchOpt.toSearchInput;
     if (searchby == "searchbyIdOrder") {
       if (!Number(info)) {
@@ -151,11 +147,9 @@ const OrdersTable = ({ }) => {
           position: "bottom-center"
         });
       } else {
-        console.log("searchbyIdOrder");
         await obtainOrderById(info,
           (response) => {
-            console.log('la respuesta que se recibio fue', response);
-            console.log(response.data);
+           
             setListOrders(response.data);
           },
           (error) => {
@@ -171,11 +165,8 @@ const OrdersTable = ({ }) => {
           position: "bottom-center"
         });
       } else {
-        console.log("serachbyidClient");
         await obtainOrderByClientId(info,
           (response) => {
-            console.log('la respuesta que se recibio fue', response);
-            console.log(response.data);
             setListOrders(response.data);
           },
           (error) => {
@@ -185,11 +176,8 @@ const OrdersTable = ({ }) => {
       }
     }
     else if (searchby == "searchbyClientName") {
-      console.log("clientename");
       await obtainOrderByClientName(info,
         (response) => {
-          console.log('la respuesta que se recibio fue', response);
-          console.log(response.data);
           setListOrders(response.data);
         },
         (error) => {
@@ -199,13 +187,9 @@ const OrdersTable = ({ }) => {
     }
   }
   useEffect(async () => {
-    console.log(
-      'Hola, soy un use effect que se ejecuta cuando la pagina se renderiza, para cargar la lista inicial o para recargar tabla :)'
-    );
+   
     await obtainOrders(
       (response) => {
-        console.log('the orders response was', response);
-        console.log(response.data);
         setListOrders(response.data);
       },
       (error) => {
@@ -249,7 +233,7 @@ const OrdersTable = ({ }) => {
         {/*All this data rows are examples. Later it will be implemented a function map that fills the rows*/}
         <tbody>
           {listOrders.map((order) => {
-            console.log(order);
+            
             return (
               <RowOrder key={nanoid()} order={order} setReload={setReload} />
             );

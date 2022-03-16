@@ -12,7 +12,6 @@ const ProductsManager = () => {
     fd.forEach((value, key) => {
       newProduct[key] = value;
     });
-    console.log(newProduct);
     await createProduct(
       {
         id: newProduct.id,
@@ -21,7 +20,6 @@ const ProductsManager = () => {
         state: newProduct.state
       },
       (response) => {
-        console.log(response.data);
         toast.success('Producto agregado con éxito');
         document.getElementById("formCreateProduct").reset();
       },

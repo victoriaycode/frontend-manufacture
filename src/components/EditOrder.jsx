@@ -62,15 +62,11 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
 
 
   useEffect(async () => {
-    console.log(
-      'Hola, soy un use effect que se ejecuta cuando usas el input, para cargar la lista de opciones :)'
-    );
+  
 
 
     await obtainClients(
       (response) => {
-        console.log('la respuesta que se recibio fue', response);
-        console.log(response.data);
         const jsonClients = response.data;
 
         const options = [];
@@ -79,7 +75,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
           var data = { "data": row, "client_doc_id": jsonClients[i].client_doc_id, "client_name": jsonClients[i].client_name }
           options.push(data);
         }
-        console.log("datosClientes: ", options);
         setOptionClients(options);
 
 
@@ -90,17 +85,13 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
     );
     await obtainUserByRole("vendedor",
       (response) => {
-        console.log('la respuesta que se recibio fue', response);
-        console.log(response.data);
         const json = response.data;
         const options = [];
         for (var i in json) {
           var row = ( json[i].name);
           var data = { "data": row, "seller_id": json[i]._id, "seller_name": json[i].name };
           options.push(data);
-          console.log(data);
         }
-        console.log("datosVendedores: ", options);
         setOptionSellers(options);
 
 
@@ -112,8 +103,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
 
     await obtainProductByState("Disponible",
       (response) => {
-        console.log('la respuesta que se recibio fue', response);
-        console.log(response.data);
         const jsonProd = response.data;
         const optionsProd = [];
 
@@ -123,7 +112,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
           optionsProd.push(data);
 
         }
-        console.log("datos: ", optionsProd);
         setAvailableProducts(optionsProd);
 
 
@@ -140,7 +128,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
   /**ReloadProducts list of available products to buy now (table) and reset fields 
   */
   useEffect(async () => {
-    console.log("aaa")
     setProductsToBuy(productsToBuy);
 
     document.getElementById("id_add").value = "";
@@ -157,7 +144,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
 
   /**If a different product is selected , it cleans fields*/
   useEffect(async () => {
-    console.log("producto select: ", productSelected);
     if (productSelected != null) {
 
       document.getElementById("id_add").value = productSelected.id;
@@ -172,7 +158,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
 
   /**For changing the quantity of the product and display the right total before added to cart */
   useEffect(async () => {
-    console.log("producto select: ", productSelected);
     if (productSelected != null) {
       document.getElementById("unitprice_add").value = productSelected.unitprice;
       document.getElementById("total_add").value = productSelected.unitprice * productQuantityToAdd;
@@ -183,7 +168,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
 
   /**For adding products to the productsToBuy List */
   const addProductToCart = () => {
-    console.log("to add products to cart");
 
     if (productSelected != null) {
 
@@ -192,7 +176,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
       let uprice = document.getElementById("unitprice_add").value = productSelected.unitprice;
 
       let totalProduct = document.getElementById("total_add").value = productSelected.unitprice * productQuantityToAdd;
-      console.log("unit ", productQuantityToAdd, "total", totalProduct);
       const rowProduct = { "id": id, "description": descrip, "unitprice": uprice, "quantity": productQuantityToAdd, "subtotal": totalProduct, "numRow": numRow }
 
       productsToBuy.push(rowProduct);
@@ -201,7 +184,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
       let addrow = numRow + 1;
       setNumberRow(addrow);
       setReloadProducts(true);
-      console.log("productsBuy", productsToBuy);
     } else {
       toast.error('Seleccione otra vez el producto o uno nuevo');
     }
@@ -212,8 +194,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
   /**For deleting products from the cart productsToBuy list */
   const deleteProductFromCart = (rowN, subtotal) => {
 
-    console.log("i dont buy it, no");
-    console.log("row", rowN);
     let newtotal = totalOrder - subtotal;
     setTotalOrder(newtotal)
     /**Filtering the list */
@@ -222,7 +202,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
     })
     setProductsToBuy(list);
 
-    console.log("filtrado", productsToBuy);
   }
 
 
@@ -243,7 +222,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
       "total": totalOrder
 
     }
-    console.log("obj ", obj)
 
     if (productsToBuy.length > 0 && newClient != null && newSeller != null) {
 
@@ -264,7 +242,6 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
           "total": totalOrder
         },
         (response) => {
-          console.log(response.data);
 
           toast.success('Venta modificada con éxito');
           setUpdateDialog(false);
@@ -292,15 +269,13 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
   const saveNewClient = async () => {
     if (newClientId != "" && optionClients != null) {
 
-      console.log("doc", newClientId);
-      console.log("name", newClientName);
+     
       await createClient(
         {
           client_doc_id: newClientId,
           client_name: newClientName,
         },
         (response) => {
-          console.log(response.data);
           toast.success('Cliente fue agregado exitosamente, revise el selector de clientes');
           setIsNewClient(false);
           setReloadClients(true);
@@ -443,7 +418,7 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
         </div>
 
 
-        /
+        
         <div className="tableDialogView divCartTable">
 
           <table className="tableorderinfo">
@@ -490,10 +465,13 @@ const EditOrder = ({ orderObj, setUpdateDialog, setReload }) => {
 
 
 
-        <div className="infoFin">
-          <label className="labeltotal">Total Venta $</label>
+        <div className="infoFin ">
+        <div className="divBtnTotalOrder ">
+        <label className="labeltotal">Total Venta $</label>
           <input className="inputChange inputTotal " placeholder="$ Total" value={totalOrder} disabled></input>
-          <div className="divBtnTotalOrder ">
+        </div>
+          
+          <div className="divBtnTotalOrder2 ">
 
             <button type="submit" className="btnBig btnAddOrder" onClick={() => setConfirmUpdateDialog(true)}>
               <img className="btnIcon" src={checkicon} alt="img"></img> Guardar

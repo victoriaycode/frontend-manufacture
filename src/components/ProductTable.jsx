@@ -25,7 +25,7 @@ const ProductTable = () => {
           "state": editState
         },
         (response) => {
-          console.log(response.data);
+       
           toast.success('Producto modificado con éxito');
         },
         (error) => {
@@ -41,7 +41,6 @@ const ProductTable = () => {
       await deleteProduct(
         product._id,
         (response) => {
-          console.log(response.data);
           toast.success('producto eliminado con éxito');
         },
         (error) => {
@@ -56,7 +55,7 @@ const ProductTable = () => {
         {editable ? (
           <>
             <td className="numberTD"><label  >{product.id}</label></td>
-            {/*<td className="numberTD"><input  className="inputChange inputValue"  type="number" defaultValue={product.id} disabled  ></input></td>*/}
+          
             <td className="descripTD"><input className="inputChange inputMedium " type="text" maxlength="200" defaultValue={product.description} onChange={(e) => {
               setEditDescrip(e.target.value);
             }}></input></td>
@@ -125,14 +124,11 @@ const ProductTable = () => {
   /**Table fetch data  and search*/
   const [reload, setReload] = useState(false);
   useEffect(async () => {
-    console.log(
-      'Hola, soy un use effect que se ejecuta solo una vez cuando la pagina se renderiza, para cargar la lista de productos inicial'
-    );
+  
     await obtainProducts(
       (response) => {
-        console.log('la respuesta que se recibio fue', response);
-        console.log(response.data);
-        setListProducts(response.data);
+        let mostRecent= response.data.reverse();
+        setListProducts(mostRecent);
       },
       (error) => {
         console.error('Salio un error:', error);
@@ -145,13 +141,11 @@ const ProductTable = () => {
   const submitSearchForm = async (e) => {
     e.preventDefault();
     const fd = new FormData(formSearchProduct.current);
-    console.log(fd.id);
     const searchOpt = {};
     fd.forEach((value, key) => {
       searchOpt[key] = value;
     });
     const searchby = searchOpt.searchSelect;
-    console.log("s: ", searchby);
     const info = searchOpt.toSearchInput;
     if (searchby == "searchbyid") {
       if (!Number(info)) {
@@ -159,11 +153,8 @@ const ProductTable = () => {
           position: "bottom-center"
         });
       } else {
-        console.log("serachbyid");
         await obtainProductById(info,
           (response) => {
-            console.log('la respuesta que se recibio fue', response);
-            console.log(response.data);
             setListProducts(response.data);
           },
           (error) => {
@@ -173,11 +164,8 @@ const ProductTable = () => {
       }
     }
     else if (searchby == "searchbyDescrip") {
-      console.log("serachbydescrip");
       await obtainProductByDescrip(info,
         (response) => {
-          console.log('la respuesta que se recibio fue', response);
-          console.log(response.data);
           setListProducts(response.data);
         },
         (error) => {

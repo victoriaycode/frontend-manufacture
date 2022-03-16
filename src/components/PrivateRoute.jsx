@@ -6,7 +6,6 @@ const PrivateRoute = ({ roleList, children }) => {
   const date = new Date();
   var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
   let day = date.toLocaleDateString("es-US", options);
-  console.log("private user data", userData);
 
   if (roleList.includes(userData.role) && userData.state == "Aprobado") {
     return children;

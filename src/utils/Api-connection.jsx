@@ -50,7 +50,6 @@ export const obtainProductByDescrip = async (descrip, successCallback, errorCall
       Authorization: getToken(),
     }
   };
-  console.log(options);
   await axios.request(options).then(successCallback).catch(errorCallback);
 };
 
@@ -63,7 +62,6 @@ export const obtainProductByState = async (state, successCallback, errorCallback
       Authorization: getToken(),
     }
   };
-  console.log(options);
   await axios.request(options).then(successCallback).catch(errorCallback);
 };
 
@@ -78,7 +76,6 @@ export const updateProductInfo = async (id, dataToUpdate, successCallback, error
     },
     data: dataToUpdate
   };
-  console.log(options);
   await axios.request(options).then(successCallback).catch(errorCallback);
 };
 
@@ -130,7 +127,6 @@ export const updateUser = async (id, dataToUpdate, successCallback, errorCallbac
     },
     data: dataToUpdate
   };
-  console.log(options);
   await axios.request(options).then(successCallback).catch(errorCallback);
 };
 
@@ -217,7 +213,6 @@ export const obtainOrderByClientId = async (idclient, successCallback, errorCall
       Authorization: getToken(),
     }
   };
-  console.log(options);
   await axios.request(options).then(successCallback).catch(errorCallback);
 };
 
@@ -230,7 +225,6 @@ export const obtainOrderByClientName = async (clientname, successCallback, error
       Authorization: getToken(),
     }
   };
-  console.log(options);
   await axios.request(options).then(successCallback).catch(errorCallback);
 };
 
@@ -293,7 +287,6 @@ export const updateOrder = async (idOrder, dataToUpdate, successCallback, errorC
       },
     data: dataToUpdate
   };
-  console.log(options);
   await axios.request(options).then(successCallback).catch(errorCallback);
 };
 

@@ -30,7 +30,6 @@ const AddUser = () => {
         "created_at": "" + new Date()
       },
       (response) => {
-        console.log(response.data);
         toast.success('user was created SUCCESSFULLY');
         document.getElementById("formAddUser").reset();
       },

@@ -26,7 +26,6 @@ const UsersTable = ({setEditOrderMode }) => {
         }
       );
     };
-    console.log('consulta', reload);
     if (reload) {
       fetchUsers();
     }

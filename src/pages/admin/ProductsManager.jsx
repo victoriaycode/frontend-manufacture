@@ -9,7 +9,6 @@ import ProductTable from 'components/ProductTable';
 const ProductsManager = () => {
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
-    console.log(value);
     setValue(newValue)
   }
   return (
