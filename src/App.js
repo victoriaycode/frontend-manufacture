@@ -22,7 +22,7 @@ function App() {
     <Auth0Provider
       domain='projectsvi.us.auth0.com'
       clientId='naPrZmPJ9i6LpRCr3byABF1kb0VosL1j'
-      redirectUri="https://pure-oasis-95513.herokuapp.com/admin"
+      redirectUri="https://manufacturer.herokuapp.com/admin"
       audience='api-autentication-parse-manofacturer'
     >
       <div>
