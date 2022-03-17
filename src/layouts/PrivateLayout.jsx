@@ -67,7 +67,7 @@ const PrivateLayout = ({ children }) => {
                     
                 },
                 (error) => {
-                    logout({ returnTo: 'http://localhost:3000/admin' });
+                    logout({ returnTo: 'https://victoriaycode.github.io/frontend-manufacture/admin' });
                     console.error('Salio un error:', error);
                     setLoadingUserInfo(false);
                 }

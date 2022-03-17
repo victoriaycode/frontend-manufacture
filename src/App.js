@@ -22,7 +22,7 @@ function App() {
     <Auth0Provider
       domain='projectsvi.us.auth0.com'
       clientId='naPrZmPJ9i6LpRCr3byABF1kb0VosL1j'
-      redirectUri="http://localhost:3000/admin"
+      redirectUri="https://victoriaycode.github.io/frontend-manufacture/admin"
       audience='api-manufacturer-projectvi'
     >
       <div>
