@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/frontend-manufacture/static/css/main.5c0a3abf.chunk.css",
+    "main.js": "/frontend-manufacture/static/js/main.26a30d08.chunk.js",
+    "main.js.map": "/frontend-manufacture/static/js/main.26a30d08.chunk.js.map",
+    "runtime-main.js": "/frontend-manufacture/static/js/runtime-main.6bbdb48c.js",
+    "runtime-main.js.map": "/frontend-manufacture/static/js/runtime-main.6bbdb48c.js.map",
+    "static/css/2.bef7f282.chunk.css": "/frontend-manufacture/static/css/2.bef7f282.chunk.css",
+    "static/js/2.90007b6e.chunk.js": "/frontend-manufacture/static/js/2.90007b6e.chunk.js",
+    "static/js/2.90007b6e.chunk.js.map": "/frontend-manufacture/static/js/2.90007b6e.chunk.js.map",
+    "index.html": "/frontend-manufacture/index.html",
+    "static/css/2.bef7f282.chunk.css.map": "/frontend-manufacture/static/css/2.bef7f282.chunk.css.map",
+    "static/css/main.5c0a3abf.chunk.css.map": "/frontend-manufacture/static/css/main.5c0a3abf.chunk.css.map",
+    "static/js/2.90007b6e.chunk.js.LICENSE.txt": "/frontend-manufacture/static/js/2.90007b6e.chunk.js.LICENSE.txt",
+    "static/media/backspace_black_48dp.1c5b2257.svg": "/frontend-manufacture/static/media/backspace_black_48dp.1c5b2257.svg",
+    "static/media/done_outline_white_48dp.8cf4d29b.svg": "/frontend-manufacture/static/media/done_outline_white_48dp.8cf4d29b.svg",
+    "static/media/error.bb596cc6.png": "/frontend-manufacture/static/media/error.bb596cc6.png",
+    "static/media/exit_to_app_white_48dp.6dc49de9.svg": "/frontend-manufacture/static/media/exit_to_app_white_48dp.6dc49de9.svg",
+    "static/media/home_white_48dp.7c7322fa.svg": "/frontend-manufacture/static/media/home_white_48dp.7c7322fa.svg",
+    "static/media/inventory_white_48dp.ee8c3772.svg": "/frontend-manufacture/static/media/inventory_white_48dp.ee8c3772.svg",
+    "static/media/people_white_48dp.f452b2ac.svg": "/frontend-manufacture/static/media/people_white_48dp.f452b2ac.svg",
+    "static/media/person_add_alt_white_48dp.c31a2851.svg": "/frontend-manufacture/static/media/person_add_alt_white_48dp.c31a2851.svg",
+    "static/media/receipt_long_white_48dp.811a0679.svg": "/frontend-manufacture/static/media/receipt_long_white_48dp.811a0679.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6bbdb48c.js",
+    "static/css/2.bef7f282.chunk.css",
+    "static/js/2.90007b6e.chunk.js",
+    "static/css/main.5c0a3abf.chunk.css",
+    "static/js/main.26a30d08.chunk.js"
+  ]
+}
