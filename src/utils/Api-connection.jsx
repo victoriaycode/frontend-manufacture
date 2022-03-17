@@ -7,7 +7,7 @@ const getToken = () => {
 export const createProduct = async (data, successCallback, errorCallback) => {
   const options = {
     method: 'POST',
-    url: 'http://localhost:3001/products/',
+    url: 'https://hidden-everglades-54198.herokuapp.com/products/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -20,7 +20,7 @@ export const createProduct = async (data, successCallback, errorCallback) => {
 export const obtainProducts = async (successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: 'http://localhost:3001/products/',
+    url: 'https://hidden-everglades-54198.herokuapp.com/products/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -32,7 +32,7 @@ export const obtainProducts = async (successCallback, errorCallback) => {
 export const obtainProductById = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `http://localhost:3001/products/${id}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/products/${id}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -44,7 +44,7 @@ export const obtainProductById = async (id, successCallback, errorCallback) => {
 export const obtainProductByDescrip = async (descrip, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `http://localhost:3001/products/d/${descrip}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/products/d/${descrip}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -56,7 +56,7 @@ export const obtainProductByDescrip = async (descrip, successCallback, errorCall
 export const obtainProductByState = async (state, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `http://localhost:3001/products/s/${state}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/products/s/${state}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -69,7 +69,7 @@ export const obtainProductByState = async (state, successCallback, errorCallback
 export const updateProductInfo = async (id, dataToUpdate, successCallback, errorCallback) => {
   var options = {
     method: 'PATCH',
-    url: `http://localhost:3001/products/upd/${id}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/products/upd/${id}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -83,7 +83,7 @@ export const updateProductInfo = async (id, dataToUpdate, successCallback, error
 export const deleteProduct = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'DELETE',
-    url: `http://localhost:3001/products/${id}`,
+    url: `https://hidden-everglades-54198.herokuapp.com/products/${id}`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -95,7 +95,7 @@ export const deleteProduct = async (id, successCallback, errorCallback) => {
 export const createUser = async (data, successCallback, errorCallback) => {
   var options = {
     method: 'POST',
-    url: 'http://localhost:3001/users/',
+    url: 'https://hidden-everglades-54198.herokuapp.com/users/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -108,7 +108,7 @@ export const createUser = async (data, successCallback, errorCallback) => {
 export const optainUsers = async (successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: 'http://localhost:3001/users/',
+    url: 'https://hidden-everglades-54198.herokuapp.com/users/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -120,7 +120,7 @@ export const optainUsers = async (successCallback, errorCallback) => {
 export const updateUser = async (id, dataToUpdate, successCallback, errorCallback) => {
   var options = {
     method: 'PATCH',
-    url: `http://localhost:3001/users/upd/${id}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/users/upd/${id}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -133,7 +133,7 @@ export const updateUser = async (id, dataToUpdate, successCallback, errorCallbac
 export const obtainUserById = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `http://localhost:3001/users/${id}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/users/${id}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -144,7 +144,7 @@ export const obtainUserById = async (id, successCallback, errorCallback) => {
 export const obtainUserByRole = async (role, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `http://localhost:3001/users/r/${role}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/users/r/${role}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -156,7 +156,7 @@ export const obtainUserByRole = async (role, successCallback, errorCallback) => 
 export const obtainUserByEmail = async (email, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `http://localhost:3001/users/e/${email}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/users/e/${email}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -168,7 +168,7 @@ export const obtainUserByEmail = async (email, successCallback, errorCallback) =
 export const deleteUser = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'DELETE',
-    url: `http://localhost:3001/users/${id}`,
+    url: `https://hidden-everglades-54198.herokuapp.com/users/${id}`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -183,7 +183,7 @@ export const deleteUser = async (id, successCallback, errorCallback) => {
 export const obtainOrders = async (successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: 'http://localhost:3001/orders/',
+    url: 'https://hidden-everglades-54198.herokuapp.com/orders/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -195,7 +195,7 @@ export const obtainOrders = async (successCallback, errorCallback) => {
 export const obtainOrderById = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `http://localhost:3001/orders/${id}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/orders/${id}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -207,7 +207,7 @@ export const obtainOrderById = async (id, successCallback, errorCallback) => {
 export const obtainOrderByClientId = async (idclient, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `http://localhost:3001/orders/idclient/${idclient}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/orders/idclient/${idclient}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -219,7 +219,7 @@ export const obtainOrderByClientId = async (idclient, successCallback, errorCall
 export const obtainOrderByClientName = async (clientname, successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: `http://localhost:3001/orders/clientname/${clientname}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/orders/clientname/${clientname}/`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -232,7 +232,7 @@ export const obtainOrderByClientName = async (clientname, successCallback, error
 export const deleteOrder = async (id, successCallback, errorCallback) => {
   var options = {
     method: 'DELETE',
-    url: `http://localhost:3001/orders/${id}`,
+    url: `https://hidden-everglades-54198.herokuapp.com/orders/${id}`,
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -244,7 +244,7 @@ export const deleteOrder = async (id, successCallback, errorCallback) => {
 export const obtainClients = async (successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: 'http://localhost:3001/clients/',
+    url: 'https://hidden-everglades-54198.herokuapp.com/clients/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -256,7 +256,7 @@ export const obtainClients = async (successCallback, errorCallback) => {
 export const createClient = async (data, successCallback, errorCallback) => {
   var options = {
     method: 'POST',
-    url: 'http://localhost:3001/clients/',
+    url: 'https://hidden-everglades-54198.herokuapp.com/clients/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -268,7 +268,7 @@ export const createClient = async (data, successCallback, errorCallback) => {
 export const createOrder = async (data, successCallback, errorCallback) => {
   var options = {
     method: 'POST',
-    url: 'http://localhost:3001/orders/',
+    url: 'https://hidden-everglades-54198.herokuapp.com/orders/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -280,7 +280,7 @@ export const createOrder = async (data, successCallback, errorCallback) => {
 export const updateOrder = async (idOrder, dataToUpdate, successCallback, errorCallback) => {
   var options = {
     method: 'PUT',
-    url: `http://localhost:3001/orders/upd/${idOrder}/`,
+    url: `https://hidden-everglades-54198.herokuapp.com/orders/upd/${idOrder}/`,
     headers: {
        'Content-Type': 'application/json',
       Authorization: getToken(),
@@ -294,7 +294,7 @@ export const updateOrder = async (idOrder, dataToUpdate, successCallback, errorC
 export const obtainUserData = async (successCallback, errorCallback) => {
   var options = {
     method: 'GET',
-    url: 'http://localhost:3001/users/auth/self/',
+    url: 'https://hidden-everglades-54198.herokuapp.com/users/auth/self/',
     headers: {
       'Content-Type': 'application/json',
       Authorization: getToken(),
