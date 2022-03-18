@@ -63,9 +63,9 @@ function App() {
                       <Index />
                     </Route>
                     <Route path='/admin'>
-                      {/* <PrivateRoute roleList={["admin"]}> */}
+                     
                       <Index />
-                      {/* </PrivateRoute> */}
+                     
                     </Route>
 
                   </Switch>
