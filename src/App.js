@@ -5,11 +5,11 @@ import AdminLayout from 'layouts/AdminLayout';
 import OrdersManager from 'pages/seller/OrdersManager';
 import { Auth0Provider } from "@auth0/auth0-react";
 import ButtonLogin from 'components/ButtonLogin';
-import Index from 'pages/admin/Index';
 import { UserContext } from 'context/UserContext';
 import { useState } from 'react';
 import PrivateRoute from 'components/PrivateRoute';
 import OrdersTable from 'components/OrdersTable';
+import IndexAdmin from 'pages/admin/IndexAdmin';
 <script
   src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
 ></script>
@@ -60,11 +60,11 @@ function App() {
                     </Route>
 
                     <Route path='/vendedor'>
-                      <Index />
+                      <IndexAdmin />
                     </Route>
                     <Route path='/admin'>
                      
-                      <Index />
+                      <IndexAdmin />
                      
                     </Route>
 
