@@ -733,9 +733,9 @@ cursor: pointer;
   padding: 10px;
 }
 .tableDialogView{
-  margin-top: 20px;
-  margin-bottom: 20px;
-  height: 250px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 230px;
   
   overflow-x: hidden;
   overflow-y: scroll;

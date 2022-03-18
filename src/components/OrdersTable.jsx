@@ -230,7 +230,6 @@ const OrdersTable = ({ }) => {
             <th className="col-title col-last">Modificar</th>
           </tr>
         </thead>
-        {/*All this data rows are examples. Later it will be implemented a function map that fills the rows*/}
         <tbody>
           {listOrders.map((order) => {
             
