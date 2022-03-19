@@ -33,7 +33,7 @@ const PrivateLayout = ({ children }) => {
 
             const token = accessToken;
            
-            const userdata = jwt_decode(token)['http://localhost/userData'];
+            const userdata = jwt_decode(token)['https://manufacturer.herokuapp.com/userData'];
             
             await obtainUserByEmail(userdata.email,
                 (response) => {
