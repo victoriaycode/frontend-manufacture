@@ -33,7 +33,7 @@ const PrivateLayout = ({ children }) => {
 
             const token = accessToken;
            
-            const userdata = jwt_decode(token)['https://manufacturer.herokuapp.com/userData'];
+            const userdata = jwt_decode(token)['http://localhost/userData'];
             
             await obtainUserByEmail(userdata.email,
                 (response) => {
@@ -67,7 +67,7 @@ const PrivateLayout = ({ children }) => {
                     
                 },
                 (error) => {
-                    logout({ returnTo: 'https://victoriaycode.github.io/frontend-manufacture/admin' });
+                    logout({ returnTo: 'https://manufacturer.herokuapp.com/admin' });
                     console.error('Salio un error:', error);
                     setLoadingUserInfo(false);
                 }
