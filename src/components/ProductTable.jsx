@@ -20,7 +20,7 @@ const ProductTable = () => {
       await updateProductInfo(
         product._id,
         {
-          "description": editDescrip.toLowerCase(),
+           "description": editDescrip,
           "unitprice": editUnitprice,
           "state": editState
         },
@@ -69,7 +69,8 @@ const ProductTable = () => {
         ) : (
           <>
             <td className="numberTD">{product.id}</td>
-            <td className="descripTD"><p className="pRowLarge">{product.description}</p></td>
+            <td className="descripTD"><p className="pRowLarge">{product.description.replace(/^\w/, (c) => c.toUpperCase())
+}</p></td>
             <td className="smallTD">$ {product.unitprice}</td>
             <td className="smallTD ">{product.state}</td>
           </>
@@ -163,16 +164,23 @@ const ProductTable = () => {
         );
       }
     }
+    // else if (searchby == "searchbyDescrip") {
+    //   await obtainProductByDescrip(info,
+    //     (response) => {
+    //       setListProducts(response.data);
+    //     },
+    //     (error) => {
+    //       console.error('Salio un error:', error);
+    //     }
+    //   );
+    // }
     else if (searchby == "searchbyDescrip") {
-      await obtainProductByDescrip(info,
-        (response) => {
-          setListProducts(response.data);
-        },
-        (error) => {
-          console.error('Salio un error:', error);
-        }
-      );
-    }
+    setListProducts(
+      listProducts.filter((elemento) => {
+        return JSON.stringify(elemento).toLowerCase().includes(info.toLowerCase());
+      })
+    );
+  }
   }
   return (
     <>

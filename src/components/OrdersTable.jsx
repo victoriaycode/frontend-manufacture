@@ -127,6 +127,8 @@ const OrdersTable = ({ }) => {
       </tr>
     )
   }
+
+  
   /**table section fetch data and search methods */
   const formSearchOrder = useRef(null);
   const [reload, setReload] = useState(false);
@@ -176,13 +178,18 @@ const OrdersTable = ({ }) => {
       }
     }
     else if (searchby == "searchbyClientName") {
-      await obtainOrderByClientName(info,
-        (response) => {
-          setListOrders(response.data);
-        },
-        (error) => {
-          console.error('Salio un error:', error);
-        }
+      // await obtainOrderByClientName(info,
+      //   (response) => {
+      //     setListOrders(response.data);
+      //   },
+      //   (error) => {
+      //     console.error('Salio un error:', error);
+      //   }
+      // );
+      setListOrders(
+        listOrders.filter((elemento) => {
+          return JSON.stringify(elemento).toLowerCase().includes(info.toLowerCase());
+        })
       );
     }
   }
@@ -207,7 +214,7 @@ const OrdersTable = ({ }) => {
           <option value="" disabled>Buscar por</option>
           <option value="searchbyIdOrder">ID Venta</option>
           <option value="searchbyIdClient">ID Cliente</option>
-          <option value="searchbyClientName">Nombre Cliente</option>
+          <option value="searchbyClientName">Coincidencia</option>
         </select>
         <input type="text" name="toSearchInput" className="toSearchInput" placeholder="Buscar" />
         <button type="submit" className="btnGeneral btnSearchUser" >

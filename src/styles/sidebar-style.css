@@ -90,7 +90,7 @@
     
   .sidebar .nav-list{
     margin-top: 20px;
-    height: calc(100%-200px);
+   
     align-items: start;
     padding-inline-start: 0px;
     text-decoration: none;
@@ -134,7 +134,7 @@
   }
   .logoutsection{
       position: relative;
-      margin-top: 240px;
+      margin-top: 200px;
       font-size: small;
   }
   .logoutsection a:hover{
